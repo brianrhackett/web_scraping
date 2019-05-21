@@ -26,7 +26,7 @@ def scrape_mars():
     conn = 'mongodb://localhost:27017'
     client = pymongo.MongoClient(conn)
     db = client.MarsDB
-
+    db.mars.remove()
     import scrape_mars
     data_in = scrape_mars.scrape()
     db.mars.insert_one(data_in)
