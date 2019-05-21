@@ -1,0 +1,65 @@
+body{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+
+.bg{
+	background:#F0F8EA;
+	padding:20px;
+}
+.text-center{
+	text-align:center;
+}
+.secondary-bg{
+	background:#F0F66E;
+}
+.tertiary-bg{
+	background:#FF5123;
+	color:#fff;
+}
+
+img{
+	max-width:100%;
+}
+
+.box{
+	margin:0 0 40px;
+}
+
+.main{
+	float:left;
+	width:66%;
+}
+
+.sidebar{
+	float:left;
+	width:34%;
+}
+
+.hemisphere{
+	float:left;
+	width:50%;
+
+}
+.hemisphere > div{
+	background:#F0F8EA;	
+	padding:0 0 20px;
+}	
+.hemisphere h5{
+	text-align:center;
+	margin-top:20px;
+}
+
+.main, 
+.sidebar,
+.hemisphere{
+	padding:20px;
+}
+
+.mars_facts td:first-child{
+	font-weight:bold;
+}
+
+.mars_facts td{
+	padding:5px 20px;
+	border-bottom:1px solid #fff;
+}

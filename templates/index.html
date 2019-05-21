@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mars Mission</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap-grid.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/custom.css') }}">
+</head>
+
+<body>
+	<div class="container">
+		<div class="bg box text-center">
+			<h1>Mission to Mars</h1>
+			<a class="btn btn-primary" href="/scrape">Scrape again</a>
+		</div>
+		<div class="box">
+			<h2>Featured Image</h2>
+			<img src="{{ data.featured_image_url }}" />
+		</div>
+		<div class="row">
+			<div class="main">
+				<h3>Latest News</h3>
+				<h5>{{ data.title }}</h5>
+				<p>{{ data.description }}</p>
+			</div>
+			<div class="sidebar">
+				<div class="box bg secondary-bg">
+					<h3>Current Weather</h3>
+					<p>{{ data.mars_weather }}</p>
+				</div>
+			</div>		
+		</div>
+		<div class="box">
+			<h3>Facts</h3>
+			<table class="mars_facts table-striped">
+				{% for key, row in data.mars_facts.items() %}
+				<tr>
+					<td>{{ key }}</td>
+					<td>{{ row.value }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<div class="box">
+			<h2>Hemispheres</h2>
+			<div class="row">
+			{% for hemi in data.hemisphere_image_urls %}
+			<div class="hemisphere">
+				<div>
+					<img src="{{ hemi.img_url }}" />
+					<h5>{{ hemi.title }}</h5>
+				</div>
+			</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
